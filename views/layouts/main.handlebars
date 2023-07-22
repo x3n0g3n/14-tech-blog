@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" href="/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Spectral:100,200,300,400,500,600,700,800,900" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poiret+One:100,200,300,400,500,600,700,800,900" />
+  </head>
+  <body>
+    {{> header}}
+    {{{body}}}
+    {{> footer}}
+    <script src="/js/main.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/semantic/dist/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    {{#if logged_in}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
+  </body>
+</html>

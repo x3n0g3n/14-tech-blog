@@ -1,0 +1,108 @@
+<div class="main-content">
+  <div class="hero">
+    <h1>Craft Your Tech Journey with Every Blog</h1>
+  </div>
+  {{#if updatingBlog}}
+    <div class="ui card">
+      <a href="/dashboard" class="ui positive basic button">Back</a>
+    </div>
+    <div class="ui card">
+      <div class="content">
+        <input type="hidden" id="blog-user-id" name="user-id" value="{{logged_in_id}}" />
+        <div class="ui form">
+          <div class="field">
+            {{this.id}}
+            <label>Blog Title:</label>
+            <input type="text" id="updated-blog-title" name="blog-title" placeholder="Enter the title" value="{{users.post_title}}">
+          </div>
+          <div class="field">
+            <label>Enter your blog details:</label>
+            <textarea id="updated-blog-content">{{users.post_content}}</textarea>
+          </div>
+          <button class="ui primary button" onclick="updateBlog(event,'{{users.id}}')">
+            Update
+          </button>
+          <button class="ui button" onclick="deleteBlog(event,'{{users.id}}')">
+            Delete
+          </button>
+        </div>
+        <div class="ui red label hidden title-err">
+          <a href="javascript:void(0)" onclick="closeMsg('title')"><i class="times icon"></i></a>
+          You must include a blog title.
+        </div>
+        <br />
+        <div class="ui red label hidden details-err">
+          <a href="javascript:void(0)" onclick="closeMsg('details')"><i class="times icon"></i></a>
+          Please provide the details for your blog.
+        </div>
+        <div class="ui green label hidden success-msg">
+          <a href="javascript:void(0)" onclick="closeMsg('success')"><i class="times icon"></i></a>
+          Blog post updated successfully.
+        </div>
+      </div>
+    </div>
+  {{else}}
+    <div class="row">
+      <div class="column">
+        <div class="ui card">
+          <div class="content">
+            <input type="hidden" id="blog-user-id" name="user-id" value="{{logged_in_id}}" />
+            <div class="ui form">
+              <div class="field">
+                <label>Blog Title:</label>
+                <input type="text" id="blog-title" name="blog-title" placeholder="Enter the title">
+              </div>
+              <div class="field">
+                <label>Enter your blog details:</label>
+                <textarea id="blog-content"></textarea>
+              </div>
+              <button class="ui primary button" onclick="addBlog(event)">
+                Save
+              </button>
+              <button class="ui button" onclick="clearBlog(event)">
+                Discard
+              </button>
+            </div>
+            <div class="ui red label hidden title-err">
+              <a href="javascript:void(0)" onclick="closeMsg('title')"><i class="times icon"></i></a>
+              You must include a blog title.
+            </div>
+            <br />
+            <div class="ui red label hidden details-err">
+              <a href="javascript:void(0)" onclick="closeMsg('details')"><i class="times icon"></i></a>
+              Please provide the details for your blog.
+            </div>
+            <div class="ui green label hidden success-msg">
+              <a href="javascript:void(0)" onclick="closeMsg('success')"><i class="times icon"></i></a>
+              Blog post submitted successfully. Check the top of the <a href="/">homepage</a> for your recent submission!
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="ui card" style="padding:1em">
+        <h2>Blogs you have created:</h2>
+        <div class="ui feed" id="blog-feed">
+          {{#unless users}}
+          <p>Start writing!</p>
+          {{/unless}}
+          {{#each users}}
+            {{#each Posts}}
+                <div class="event">
+                  <div class="label">
+                    <i class="pencil icon"></i>
+                  </div>
+                  <div class="content">
+                    <div class="summary">
+                      You posted <a href="javascript:void(0)" onclick="showBlog('{{id}}')">{{post_title}}</a>
+                      <div class="date">{{formatDate post_date}}</div>
+                    </div>
+                  </div>
+                </div>
+            {{/each}}
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  {{/if}}
+</div>

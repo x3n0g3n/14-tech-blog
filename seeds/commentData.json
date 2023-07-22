@@ -1,0 +1,122 @@
+[
+    {
+        "comment_content": "Awesome technology! I'm amazed by the advancements.",
+        "user_id": 5,
+        "post_id": 3,
+        "comment_date": "2023-05-14 09:30:00"
+    },
+    {
+        "comment_content": "This post is so informative! Thanks for sharing.",
+        "user_id": 3,
+        "post_id": 9,
+        "comment_date": "2023-05-14 12:15:00"
+    },
+    {
+        "comment_content": "Impressive innovation! Can't wait to see what's next.",
+        "user_id": 9,
+        "post_id": 7,
+        "comment_date": "2023-05-13 17:45:00"
+    },
+    {
+        "comment_content": "Great article! It really simplified a complex topic.",
+        "user_id": 8,
+        "post_id": 2,
+        "comment_date": "2023-05-13 19:55:00"
+    },
+    {
+        "comment_content": "Wow, this technology has the potential to change everything.",
+        "user_id": 2,
+        "post_id": 4,
+        "comment_date": "2023-05-13 22:10:00"
+    },
+    {
+        "comment_content": "As a tech enthusiast, I find this post fascinating. Well done!",
+        "user_id": 4,
+        "post_id": 10,
+        "comment_date": "2023-05-14 08:05:00"
+    },
+    {
+        "comment_content": "I never thought I'd see such advancements in my lifetime. Truly remarkable!",
+        "user_id": 7,
+        "post_id": 1,
+        "comment_date": "2023-05-13 14:40:00"
+    },
+    {
+        "comment_content": "Incredible work! This innovation will revolutionize the industry.",
+        "user_id": 6,
+        "post_id": 5,
+        "comment_date": "2023-05-14 16:20:00"
+    },
+    {
+        "comment_content": "I learned a lot from this post. Thank you for sharing your knowledge.",
+        "user_id": 1,
+        "post_id": 8,
+        "comment_date": "2023-05-14 10:50:00"
+    },
+    {
+        "comment_content": "This tech is mind-blowing! Can't wait to get my hands on it.",
+        "user_id": 10,
+        "post_id": 6,
+        "comment_date": "2023-05-13 21:05:00"
+    },
+    {
+        "comment_content": "This tech is revolutionary! It will transform the industry.",
+        "user_id": 3,
+        "post_id": 5,
+        "comment_date": "2023-05-14 13:25:00"
+    },
+    {
+        "comment_content": "Incredible post! It opened my eyes to new possibilities.",
+        "user_id": 6,
+        "post_id": 2,
+        "comment_date": "2023-05-13 18:40:00"
+    },
+    {
+        "comment_content": "Wow, I'm blown away by the advancements in this field!",
+        "user_id": 8,
+        "post_id": 9,
+        "comment_date": "2023-05-14 09:10:00"
+    },
+    {
+        "comment_content": "Informative and well-written! I enjoyed reading this post.",
+        "user_id": 1,
+        "post_id": 7,
+        "comment_date": "2023-05-13 20:55:00"
+    },
+    {
+        "comment_content": "This innovation is mind-boggling! The future is here.",
+        "user_id": 4,
+        "post_id": 10,
+        "comment_date": "2023-05-14 11:15:00"
+    },
+    {
+        "comment_content": "Great insights! This post gave me a fresh perspective.",
+        "user_id": 9,
+        "post_id": 3,
+        "comment_date": "2023-05-13 22:50:00"
+    },
+    {
+        "comment_content": "Impressive work! It's inspiring to witness such breakthroughs.",
+        "user_id": 5,
+        "post_id": 1,
+        "comment_date": "2023-05-14 15:05:00"
+    },
+    {
+        "comment_content": "I'm grateful for this informative post. Thanks for sharing!",
+        "user_id": 7,
+        "post_id": 8,
+        "comment_date": "2023-05-13 16:35:00"
+    },
+    {
+        "comment_content": "I can't wait to see how this technology evolves in the future!",
+        "user_id": 2,
+        "post_id": 4,
+        "comment_date": "2023-05-14 12:45:00"
+    },
+    {
+        "comment_content": "This tech is a game-changer! It will redefine the industry.",
+        "user_id": 10,
+        "post_id": 6,
+        "comment_date": "2023-05-13 21:20:00"
+    }
+]
