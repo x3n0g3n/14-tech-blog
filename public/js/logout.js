@@ -1,23 +1,18 @@
-/**
- * @logout
- * Function handles logging the user out
- */
-const logout = async () => {
-  // the response received from the GET request
-  const response = await fetch('/api/auth/logout', {
-    method: 'GET',
+// Logout function to send request to log out the user
+const chessLogout = async () => {
+  const response = await fetch('/api/users/logout', {
+    method: 'POST',
     headers: { 'Content-Type': 'application/json' },
   });
-  // if reponse ok
+
   if (response.ok) {
-    // redirect to the home page
-    document.location.replace('/');
-  } 
-  // else if response is not ok
-  else {
-    // alert prompt with response status text
-    alert(response.statusText);
+    document.location.replace('/'); // When successful, load the homepage
+  } else {
+    alert('Failed to log out.'); // When unsuccessful, show alert
   }
 };
-// event listeners - on click
-document.querySelector('#logout').addEventListener('click', logout);
+// Add an event listener to the logout button
+const chessLogoutButton = document.querySelector('#chess-logout');
+if (chessLogoutButton) {
+  chessLogoutButton.addEventListener('click', chessLogout);
+}

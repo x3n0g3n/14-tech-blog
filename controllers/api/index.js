@@ -1,10 +1,13 @@
-const router = require('express').Router(),
-      authRoutes = require('./authRoutes'),
-      commentRoutes = require('./commentRoutes'),
-      blogRoutes = require('./blogRoutes');
+// Import the required modules
+const router = require("express").Router();
+const userRoutes = require("./user-routes");
+const postRoutes = require("./post-routes");
+const commentRoutes = require("./comment-routes");
 
-router.use('/auth', authRoutes);
-router.use('/comment', commentRoutes);
-router.use('/blog', blogRoutes);
+// Set up the routes
+router.use("/users", userRoutes); //  for user-
+router.use("/posts", postRoutes); //  for post- 
+router.use("/comments", commentRoutes); //  for comment-
 
+// Export the router
 module.exports = router;

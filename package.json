@@ -1,23 +1,24 @@
 {
-  "name": "tech-blog",
+  "name": "mvc",
   "version": "1.0.0",
-  "description": "cms-style blog site",
+  "description": "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
   "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "seed": "node seeds/seed.js"
-  },
   "dependencies": {
-    "bcrypt": "^5.1.0",
-    "connect-session-sequelize": "^7.1.6",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "express-handlebars": "^7.0.7",
-    "express-session": "^1.17.3",
-    "fomantic-ui": "^2.9.2",
-    "handlebars": "^4.7.7",
-    "moment": "^2.29.4",
-    "mysql2": "^2.1.0",
-    "sequelize": "^6.3.5"
-  }
+    "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
+    "connect-session-sequelize": "^7.0.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "express-session": "^1.17.1",
+    "googleapis": "^121.0.0",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.31.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
 }
