@@ -1,4 +1,3 @@
-// Signup request
 const chessSignupFormHandler = async (event) => {
   event.preventDefault();
 
@@ -14,14 +13,14 @@ const chessSignupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/'); // successful, load the homepage
+      document.location.replace('/');
     } else {
-      alert('Failed to sign up.'); //  unsuccessful, show alert
+      alert('Failed to sign up.'); 
     }
   }
 };
 
-// Event listener
+
 const chessSignupForm = document.querySelector('#signup-form');
 if (chessSignupForm) {
   chessSignupForm.addEventListener('submit', chessSignupFormHandler);

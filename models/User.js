@@ -8,7 +8,6 @@ class User extends Model {
     return bcryptjs.compareSync(loginPw, this.password);
   }
 }
-
 User.init(
   {
     id: {

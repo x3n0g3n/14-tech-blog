@@ -13,18 +13,15 @@ const newChessCommentFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.reload(); // When successful, reload the same page
+      document.location.reload(); 
     } else {
       console.log('Response status:', response.status);
       console.log('Response text:', await response.text());
-      alert('Failed to create a comment.'); // When unsuccessful, show alert
+      alert('Failed to create a comment.');
     }
   }
 };
 
-
-
-// Event listeners
 const newChessCommentForm = document.querySelector('.new-chess-comment-form');
 if (newChessCommentForm) {
   newChessCommentForm.addEventListener('submit', newChessCommentFormHandler);

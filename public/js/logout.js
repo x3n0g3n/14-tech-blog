@@ -1,4 +1,3 @@
-// Logout function to send request to log out the user
 const chessLogout = async () => {
   const response = await fetch('/api/users/logout', {
     method: 'POST',
@@ -6,12 +5,11 @@ const chessLogout = async () => {
   });
 
   if (response.ok) {
-    document.location.replace('/'); // When successful, load the homepage
+    document.location.replace('/');
   } else {
-    alert('Failed to log out.'); // When unsuccessful, show alert
+    alert('Failed to log out.'); 
   }
 };
-// Add an event listener to the logout button
 const chessLogoutButton = document.querySelector('#chess-logout');
 if (chessLogoutButton) {
   chessLogoutButton.addEventListener('click', chessLogout);

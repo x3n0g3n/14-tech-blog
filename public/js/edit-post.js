@@ -1,9 +1,7 @@
-// Get the post ID from the endpoint
 const post_id = window.location.toString().split("/")[
   window.location.toString().split("/").length - 1
 ];
 
-// Update the post
 const updateChessPostFormHandler = async (event) => {
   event.preventDefault();
 
@@ -20,14 +18,13 @@ const updateChessPostFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/dashboard"); // When successful, load the dashboard page
+      document.location.replace("/dashboard"); 
     } else {
-      alert("Failed to update a post."); // When unsuccessful, show alert
+      alert("Failed to update a post."); 
     }
   }
 };
 
-// Delete the post
 const deleteChessPostFormHandler = async (event) => {
   event.preventDefault();
 
@@ -36,13 +33,13 @@ const deleteChessPostFormHandler = async (event) => {
   });
 
   if (response.ok) {
-    document.location.replace("/dashboard"); // When successful, load the dashboard page
+    document.location.replace("/dashboard"); 
   } else {
-    alert("Failed to delete a post."); // When unsuccessful, show alert
+    alert("Failed to delete a post.");
   }
 };
 
-// Event listeners
+
 const updateChessPostButton = document.querySelector("#update-chess-post");
 
 if (updateChessPostButton) {

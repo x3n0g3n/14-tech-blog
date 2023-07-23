@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const { Post, User, Comment } = require("../../models");
 const withAuth = require("../../utils/auth");
-// Get all posts with associated username
+
+
 router.get("/", async (req, res) => {
   try {
     const postData = await Post.findAll({
@@ -9,31 +10,31 @@ router.get("/", async (req, res) => {
     });
     res.status(200).json(postData);
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json({ error: "Internal server error" });
   }
 });
-// Get one post by ID with associated username and comments
+
+
 router.get("/:id", async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
         { model: User, attributes: ["username"] },
-        {
-          model: Comment,
-          include: [{ model: User, attributes: ["username"] }],
-        },
+        { model: Comment, include: [{ model: User, attributes: ["username"] }] },
       ],
     });
+
     if (!postData) {
-      res.status(404).json({ message: "No post found with that id!" });
+      res.status(404).json({ message: "No post found with that id" });
       return;
     }
     res.status(200).json(postData);
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json({ error: "Internal server error" });
   }
 });
-// Create a new post with authenticated user
+
+
 router.post("/", withAuth, async (req, res) => {
   try {
     const newPost = await Post.create({
@@ -42,45 +43,44 @@ router.post("/", withAuth, async (req, res) => {
     });
     res.status(200).json(newPost);
   } catch (err) {
-    res.status(400).json(err);
+    res.status(400).json({ error: "Bad request" });
   }
 });
-// Update an existing post with authenticated user
+
 router.put("/:id", withAuth, async (req, res) => {
   try {
-    const updatedPost = await Post.update(req.body, {
+    const [updatedRowsCount] = await Post.update(req.body, {
       where: { id: req.params.id },
     });
 
-    if (!updatedPost) {
-      res.status(404).json({ message: "No post found with that id!" });
+    if (updatedRowsCount === 0) {
+      res.status(404).json({ message: "No post found with that id" });
       return;
     }
-    res.status(200).json(updatedPost);
+    res.status(200).json({ message: "Post updated successfully" });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json({ error: "Internal server error" });
   }
 });
-// Delete a post with authenticated user
+
 router.delete("/:id", withAuth, async (req, res) => {
   try {
-    // Delete all comments related to the post
     await Comment.destroy({
       where: { post_id: req.params.id },
     });
 
-    const deletedPost = await Post.destroy({
+    const deletedRowsCount = await Post.destroy({
       where: { id: req.params.id },
     });
 
-    if (!deletedPost) {
-      res.status(404).json({ message: "No post found with that id!" });
+    if (deletedRowsCount === 0) {
+      res.status(404).json({ message: "No post found with that id" });
       return;
     }
-    res.status(200).json(deletedPost);
+    res.status(200).json({ message: "Post deleted successfully" });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json({ error: "Internal server error" });
   }
 });
-// Export the router
+
 module.exports = router;

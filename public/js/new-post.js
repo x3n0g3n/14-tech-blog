@@ -1,4 +1,3 @@
-// Create new post public/js/new-post.js
 const newChessPostFormHandler = async (event) => {
   event.preventDefault();
 
@@ -13,14 +12,13 @@ const newChessPostFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/dashboard'); //  successful, load the dashboard page
+      document.location.replace('/dashboard'); 
     } else {
-      alert('Failed to create a new post.'); //  unsuccessful, show alert
+      alert('Failed to create a new post.'); 
     }
   }
 };
 
-// Event listeners
 const newChessPostForm = document.querySelector('.new-chess-post-form');
 if (newChessPostForm) {
   newChessPostForm.addEventListener('submit', newChessPostFormHandler);

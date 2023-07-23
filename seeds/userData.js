@@ -1,35 +1,27 @@
-// Importing Post model from ../models directory
 const { User } = require("../models");
-// Array of dummy blog post data
 const userData = [
   {
-    username: "user1",
-    email: "user1@example.com",
-    password: "password1",
+    username: "bunny",
+    email: "killa@example.com",
+    password: "apple",
   },
   {
-    username: "user2",
-    email: "user2@example.com",
-    password: "password2",
+    username: "tiger",
+    email: "peanut@example.com",
+    password: "banana",
   },
   {
-    username: "user3",
-    email: "user3@example.com",
-    password: "password3",
+    username: "kitty",
+    email: "mouse@example.com",
+    password: "catcus",
   },
   {
-    username: "user4",
-    email: "user4@example.com",
-    password: "password4",
-  },
-  {
-    username: "user5",
-    email: "user5@example.com",
-    password: "password5",
+    username: "adrena",
+    email: "hijinx@example.com",
+    password: "datacode",
   },
 
 ];
-// Function to seed posts table with dummy data using bulkCreate method
 const seedUsers = () => User.bulkCreate(userData);
-// Exporting seedPosts function for use in other files
+
 module.exports = seedUsers;
